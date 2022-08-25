@@ -4,18 +4,18 @@
 
         <Cronometro :timer="timer" />
 
-        <button class="button" @click="iniciar" :disabled="cronometroRodando">
+        <button class="button timer" @click="iniciar" :disabled="cronometroRodando">
             <span class="icon">
                 <i class="fas fa-play"></i>
             </span>
-            <span>play</span>
+            <span>PLAY</span>
         </button>
 
-        <button class="button" @click="finalizar" :disabled="!cronometroRodando">
+        <button class="button timer" @click="finalizar" :disabled="!cronometroRodando">
             <span class="icon">
                 <i class="fas fa-stop"></i>
             </span>
-            <span>stop</span>
+            <span>STOP</span>
         </button>
 
     </div>
@@ -62,6 +62,10 @@ export default defineComponent({
 .button {
     background-color: var(--fundo-primario);
     border: var(--border);
+}
+
+.timer {
+    font-weight: bold;
 }
 
 </style>

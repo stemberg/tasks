@@ -26,6 +26,7 @@ export default defineComponent({
 <style>
 
 .cronometro {
+    font-weight: bold;
     color: var(--texto-primario);
 }
 

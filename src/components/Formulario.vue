@@ -51,6 +51,7 @@ export default defineComponent({
 
 .formulario input::placeholder {
   color: var(--texto-input);
+  font-weight: bold;
 }
 
 .formulario input{
