@@ -44,11 +44,13 @@ main {
   --border: #dbdbdb;
   --bg-tarefa: #b1a9a9;
   --texto-input: #4a4a4a;
+  --borda-primario: var(--bg-primario);
 }
 
 main.modo-escuro {
   --bg-primario: #292828;
   --texto-primario: #535252;
+  --borda-primario: var(--texto-primario);
   --texto-input: #4a4a4a;
   --fundo-primario: #b1a9a9;
   --bg-lateral: #b1a9a9;

@@ -1,27 +1,38 @@
 <template>
- <div>
-  <FormularioProjeto @aoSalvarProjeto="salvar" />
- </div>
+  <div>
+    <FormularioProjeto/>
+    <div class="projetos">
+      <Projeto
+        :projetos="projetos"
+      />
+    </div>
+  </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-import IProjeto from "../interface/IProjeto";
+import { computed, defineComponent } from "vue";
+import { useStore } from "vuex";
 import FormularioProjeto from "../components/FormularioProjeto.vue";
+import Projeto from "../components/Projeto.vue";
+import { key } from "../store";
 
 export default defineComponent({
-    name: "Projetos",
-    data() {
-        return {
-            projetos: [] as IProjeto[]
-        };
-    },
-    methods: {
-        salvar(projeto: IProjeto) {
-          this.projetos.push(projeto);
-          console.log(this.projetos);
-        }
-    },
-    components: { FormularioProjeto }
+  name: "Projetos",
+  components: { FormularioProjeto, Projeto },
+  setup() {
+    const store = useStore(key);
+    return {
+      projetos: computed(() => store.state.projetos)
+    };
+  }
 });
 </script>
+
+<style>
+
+.projetos {
+  margin: 20px;
+}
+
+
+</style>
